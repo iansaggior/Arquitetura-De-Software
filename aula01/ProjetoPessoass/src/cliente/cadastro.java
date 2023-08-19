@@ -15,7 +15,6 @@ public class cadastro {
         String[] persons = {"Pessoa Física", "Pessoa Jurídica"};
         int optionPerson = JOptionPane.showOptionDialog(null, "Qual tipo de pessoa voce quer cadastar?",
             null, JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, persons, persons[0]);
-
         
         if (optionPerson == 0) {
             nomePF = JOptionPane.showInputDialog("Digite seu nome: ");
@@ -31,5 +30,3 @@ public class cadastro {
         }
     }
 }
-
-
