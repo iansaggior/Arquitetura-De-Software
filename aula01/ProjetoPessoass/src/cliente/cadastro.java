@@ -29,7 +29,7 @@ public class cadastro {
             PessoaJuridica  pesJur = new PessoaJuridica(nomePJ, cnpj);
             System.out.println(pesJur);
         }
-        
     }
-
 }
+
+
