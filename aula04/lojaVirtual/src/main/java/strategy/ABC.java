@@ -14,17 +14,17 @@ package strategy;
     public double calcularFrete(double peso) 
     {
         double frete = 0;
-        if (peso <= 5) 
+        if (peso <= 9) 
         {
-            frete = 23.1;                
+            frete = 10;                
         } 
-        else if (peso <= 10) 
+        else if (peso <= 30) 
         {
             frete = 30;
         } 
         else 
         {
-            frete = 40;
+            frete = 48.50;
         }
         return frete;
     }

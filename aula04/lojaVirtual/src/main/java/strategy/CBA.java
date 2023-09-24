@@ -14,17 +14,17 @@ public class CBA implements CalcularFreteEmpresas
     public double calcularFrete(double peso) 
     {
         double frete = 0;
-        if (peso <= 5)
+        if (peso <= 9)
         {
-            frete = 12.6;    
+            frete = 13;    
         } 
-        else if (peso <=10) 
+        else if (peso <=30) 
         {
-            frete = 22.6;
+            frete = 25;
         } 
         else 
         {
-            frete = 32.6;
+            frete = 44;
         }
         return frete;
     }

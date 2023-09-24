@@ -9,42 +9,30 @@ package strategy;
  * @author ian.spereira
  */
 public enum ListaEmpresas implements CalcularFreteEmpresas {
-    
+
     ABC {
         @Override
-        public double calcularFrete(double peso) 
-        {
+        public double calcularFrete(double peso) {
             double frete = 0;
-            if (peso <= 5) 
-            {
-                frete = 23.1;                
-            } 
-            else if (peso <= 10) 
-            {
+            if (peso <= 5) {
+                frete = 23.1;
+            } else if (peso <= 10) {
                 frete = 30;
-            } 
-            else 
-            {
+            } else {
                 frete = 40;
             }
             return frete;
         }
-       },
+    },
     CBA {
         @Override
-        public double calcularFrete(double peso) 
-        {
+        public double calcularFrete(double peso) {
             double frete = 0;
-            if (peso <= 5)
-            {
-                frete = 12.6;    
-            } 
-            else if (peso <=10) 
-            {
+            if (peso <= 5) {
+                frete = 12.6;
+            } else if (peso <= 10) {
                 frete = 22.6;
-            } 
-            else 
-            {
+            } else {
                 frete = 32.6;
             }
             return frete;
@@ -52,24 +40,28 @@ public enum ListaEmpresas implements CalcularFreteEmpresas {
     },
     XPTO {
         @Override
-        public double calcularFrete(double peso) 
-        {
+        public double calcularFrete(double peso) {
             double frete = 0;
-            if (peso <= 5) 
-            {
+            if (peso <= 5) {
                 frete = 12;
-            } 
-            else if (peso <= 10) 
-            {
+            } else if (peso <= 10) {
                 frete = 15.2;
-            } 
-            else 
-            {
+            } else {
                 frete = 21.2;
             }
-            return frete;        
+            return frete;
         }
-        
-    };
-    
+
+    }
+    // ,
+    // TESTE {
+
+    //     @Override
+    //     public double calcularFrete(double peso) {
+
+    //     }
+
+    // }
+    ;
+
 }

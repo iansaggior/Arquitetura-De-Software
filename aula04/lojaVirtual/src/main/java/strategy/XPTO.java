@@ -13,17 +13,17 @@ public class XPTO implements CalcularFreteEmpresas {
     public double calcularFrete(double peso) 
     {
         double frete = 0;
-        if (peso <= 5) 
+        if (peso <= 9) 
         {
             frete = 12;
         } 
-        else if (peso <= 10) 
+        else if (peso <= 30) 
         {
-            frete = 15.2;
+            frete = 27;
         } 
         else 
         {
-            frete = 21.2;
+            frete = 41.50;
         }
         return frete;
     } 
