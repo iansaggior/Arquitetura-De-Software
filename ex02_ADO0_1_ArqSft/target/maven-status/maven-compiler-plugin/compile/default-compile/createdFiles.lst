@@ -1,0 +1,7 @@
+modelo\Produto.class
+strategy\IPTO3.class
+modelo\Servico.class
+strategy\CalcOrcam.class
+strategy\IPTO1.class
+cliente\UsaStrategy.class
+strategy\IPTO2.class
