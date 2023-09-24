@@ -15,8 +15,7 @@ public class Produto
     private double peso;
 
     
-    public Produto() 
-    {
+    public Produto() {
     }
     
     public Produto(String descrisao, double preco, double peso) 

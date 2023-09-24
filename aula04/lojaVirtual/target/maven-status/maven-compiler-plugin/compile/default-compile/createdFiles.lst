@@ -1,2 +1,10 @@
+strategy\CBA.class
+strategy\ListaEmpresas$2.class
+strategy\ListaEmpresas$1.class
 modelo\Produto.class
+strategy\CalcularFreteEmpresas.class
+strategy\ABC.class
+strategy\ListaEmpresas$3.class
+strategy\XPTO.class
 cliente\LojaVirtual.class
+strategy\ListaEmpresas.class

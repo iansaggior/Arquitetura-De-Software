@@ -4,7 +4,7 @@
 
 package cliente;
 
-import java.util.ArrayList;
+import java.util.*;
 import java.util.Scanner;
 import modelo.Produto;
 import strategy.*;
@@ -26,77 +26,13 @@ public class LojaVirtual {
         double frete = 0;
                 
         frete = ListaEmpresas.values()[opc-1].calcularFrete(p1.getPeso());
-        if (opc > 0 && opc <= 3) {
+        if (opc > 0 && opc <= 3) 
+        {
+            System.out.println(p1);
             System.out.println("Valor do frete: " + frete);
         } else 
-            System.err.println("Opção invalida");
         {
-            
+            System.err.println("Opção invalida");
         }
-//        else if (opc == 2) 
-//        {
-//            frete = ListaEmpresas.CBA.calcularFrete(p1.getPeso());
-//        } 
-//        else if (opc == 3)
-//        {
-//            frete = ListaEmpresas.XPTO.calcularFrete(p1.getPeso());
-//        } 
-//        else 
-//        {
-//        System.err.println("Opçção Invalida");
-//                
-//        }
-//        //double frete = e.calcularFrete(p1.getPeso());
-//        if (opc < 3) {
-//            System.out.println("Valor do frete: " + frete);
-//        }
     }
-    
-//    public static double calcularFrete(String nomeEmpresa, double peso) {
-//        double frete = 0;
-//        if (nomeEmpresa.equals("XPTO")) 
-//        {
-//            if (peso <= 5) 
-//            {
-//                frete = 12;
-//            } 
-//            else if (peso <= 10) 
-//            {
-//                frete = 15.2;
-//            } 
-//            else {
-//                frete = 21.2;
-//            }
-//        } 
-//        else if (nomeEmpresa.equals("ABC")) 
-//        {
-//            if (peso <= 5) 
-//            {
-//                frete = 12.6;    
-//            } 
-//            else if (peso <=10) 
-//            {
-//                frete = 22.6;
-//            } 
-//            else 
-//            {
-//                frete = 32.6;
-//            }
-//        } 
-//        else 
-//        {
-//            if (peso <= 5) 
-//            {
-//                frete = 23.1;                
-//            } 
-//            else if (peso <= 10) 
-//            {
-//                frete = 30;
-//            } 
-//            else {
-//                frete = 40;
-//            }
-//        }
-//        return frete;
-//    }
 }
