@@ -4,9 +4,10 @@ package pattern;
  *  Professor Gerson Risso
  */
 public class Singleton {
-  private static Singleton singleton=new Singleton();
+  private static Singleton singleton = new Singleton();
   
-  private Singleton(){}
+  private Singleton(){
+  }
   
   public static Singleton getInstance(){
     return singleton;
