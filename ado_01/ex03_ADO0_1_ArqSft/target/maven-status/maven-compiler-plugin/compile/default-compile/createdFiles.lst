@@ -1,0 +1,5 @@
+strategy\MetodoOrdenação.class
+strategy\Insertion.class
+strategy\Bubble.class
+main\UsaStrategy.class
+strategy\Selection.class
