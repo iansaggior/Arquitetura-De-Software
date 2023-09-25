@@ -24,11 +24,10 @@ public class UsaStrategy {
 
             for (int i = 1; i <= qtdProd; i++) {
                 String nomeProd = JOptionPane.showInputDialog("Digite o nome do " + i + "º produto:");
-                double precoProd = Double
-                        .parseDouble(JOptionPane.showInputDialog("Digite o preço do " + i + "º produto:"));
+                double precoProd = Double.parseDouble(JOptionPane.showInputDialog("Digite o preço do " + i + "º produto:"));
                 Produto prod = new Produto(nomeProd, precoProd);
                 produtos.add(prod);
-            }
+                }
 
             ArrayList<Servico> servicos = new ArrayList<>();
 
@@ -37,13 +36,12 @@ public class UsaStrategy {
                 int qtdServ = Integer.parseInt(JOptionPane.showInputDialog(
                         "Digite quantos serviços irão ter no orçamento: "));
 
-                if (qtdServ != 0) {
+                if (qtdServ !=0) {
                     for (int i = 1; i <= qtdServ; i++) {
-                        String nomeServ = JOptionPane.showInputDialog("Digite o nome do " + i + "º serviço:");
-                        double precoServ = Double
-                                .parseDouble(JOptionPane.showInputDialog("Digite o preço do " + i + "º serviço:"));
-                        Servico serv = new Servico(nomeServ, precoServ);
-                        servicos.add(serv);
+                    String nomeServ = JOptionPane.showInputDialog("Digite o nome do " + i + "º serviço:");
+                    double precoServ = Double.parseDouble(JOptionPane.showInputDialog("Digite o preço do " + i + "º serviço:"));
+                    Servico serv = new Servico(nomeServ, precoServ);
+                    servicos.add(serv);
                     }
                 }
 
@@ -71,9 +69,17 @@ public class UsaStrategy {
             double orca02 = calcIpto02.calcularOrcamento(valorTotalOcamento);
             double orca03 = calcIpto03.calcularOrcamento(valorTotalOcamento);
 
-            System.out.println(produtos.toString().replace("[", "Produtos:\n").replace("]", "").replace(",", "\n"));
-            System.out.println(servicos.toString().replace("[", "Serviços:\n").replace("]", "").replace(",", "\n"));
-
+            System.out.println(produtos.toString().
+                                replace("[","Produtos:\n").
+                                replace("]","").
+                                replace(",","\n"));
+            if (confOrca == 0) {
+            System.out.println(servicos.toString().
+                                replace("[","Serviços:\n").
+                                replace("]","").
+                                replace(",","\n"));
+            }
+            
             System.out.println("Valor total do Orçamento sem os impostos = " + valorTotalOcamento);
 
             System.out.println("Valor do Orçamento com o imposto IPTO01: " + valorTotalOcamento + " + 10% = " + orca01);

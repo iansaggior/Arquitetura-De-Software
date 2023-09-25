@@ -21,8 +21,8 @@ public class Insertion implements MetodoOrdenação {
                 v[j] = v[j - 1];
                 j--;
             }
-            v[j] = temp;
             cont++;
+            v[j] = temp;
         }
         System.out.println("Quantidade de vezes que ouve uma troca de posição: " + cont);
     }
