@@ -1,0 +1,5 @@
+strategy\MetodoOrdenacao.class
+main\ex03_ado\Ex03_ado.class
+strategy\Insertion.class
+strategy\Bubble.class
+strategy\Selection.class
