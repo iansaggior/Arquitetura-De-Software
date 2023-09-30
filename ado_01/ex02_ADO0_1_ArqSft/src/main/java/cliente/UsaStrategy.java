@@ -1,7 +1,6 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
-
 package cliente;
 
 import java.util.*;
@@ -27,7 +26,7 @@ public class UsaStrategy {
                 double precoProd = Double.parseDouble(JOptionPane.showInputDialog("Digite o preço do " + i + "º produto:"));
                 Produto prod = new Produto(nomeProd, precoProd);
                 produtos.add(prod);
-                }
+            }
 
             ArrayList<Servico> servicos = new ArrayList<>();
 
@@ -36,15 +35,14 @@ public class UsaStrategy {
                 int qtdServ = Integer.parseInt(JOptionPane.showInputDialog(
                         "Digite quantos serviços irão ter no orçamento: "));
 
-                if (qtdServ !=0) {
+                if (qtdServ != 0) {
                     for (int i = 1; i <= qtdServ; i++) {
-                    String nomeServ = JOptionPane.showInputDialog("Digite o nome do " + i + "º serviço:");
-                    double precoServ = Double.parseDouble(JOptionPane.showInputDialog("Digite o preço do " + i + "º serviço:"));
-                    Servico serv = new Servico(nomeServ, precoServ);
-                    servicos.add(serv);
+                        String nomeServ = JOptionPane.showInputDialog("Digite o nome do " + i + "º serviço:");
+                        double precoServ = Double.parseDouble(JOptionPane.showInputDialog("Digite o preço do " + i + "º serviço:"));
+                        Servico serv = new Servico(nomeServ, precoServ);
+                        servicos.add(serv);
                     }
                 }
-
             }
 
             // variavel que soma o preço de todos os produtos
@@ -61,31 +59,35 @@ public class UsaStrategy {
 
             double valorTotalOcamento = somaValorProd + somaValorServ;
 
-            CalcOrcam calcIpto01 = new IPTO1();
-            CalcOrcam calcIpto02 = new IPTO2();
-            CalcOrcam calcIpto03 = new IPTO3();
+            String[] options = {
+                "IPTO01",
+                "IPTO02",
+                "IPTO03",
+                "SAIR"
+            };
+            int option = JOptionPane.showOptionDialog(null, null, "Escolha uma opção",
+                    JOptionPane.INFORMATION_MESSAGE, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
 
-            double orca01 = calcIpto01.calcularOrcamento(valorTotalOcamento);
-            double orca02 = calcIpto02.calcularOrcamento(valorTotalOcamento);
-            double orca03 = calcIpto03.calcularOrcamento(valorTotalOcamento);
+            if (option > 2) {
+                System.err.println("SAINDO...");
+            } else {
 
-            System.out.println(produtos.toString().
-                                replace("[","Produtos:\n").
-                                replace("]","").
-                                replace(",","\n"));
-            if (confOrca == 0) {
-            System.out.println(servicos.toString().
-                                replace("[","Serviços:\n").
-                                replace("]","").
-                                replace(",","\n"));
+                System.out.println(produtos.toString().
+                        replace("[", "Produtos:\n").
+                        replace("]", "").
+                        replace(",", "\n"));
+                if (confOrca == 0) {
+                    System.out.println(servicos.toString().
+                            replace("[", "Serviços:\n").
+                            replace("]", "").
+                            replace(",", "\n"));
+                }
+
+                System.out.println("Valor total do Orçamento sem os impostos = " + valorTotalOcamento + "\n");
+
+                CalcOrcam clOrc = OpcImposto.values()[option].opcaoCalcOrca();
+                System.out.println(clOrc.calcularOrcamento(valorTotalOcamento));
             }
-            
-            System.out.println("Valor total do Orçamento sem os impostos = " + valorTotalOcamento);
-
-            System.out.println("Valor do Orçamento com o imposto IPTO01: " + valorTotalOcamento + " + 10% = " + orca01);
-            System.out.println("Valor do Orçamento com o imposto IPTO02: " + valorTotalOcamento + " + 15% = " + orca02);
-            System.out.println("Valor do Orçamento com o imposto IPTO03: " + valorTotalOcamento + " + 25% = " + orca03);
-
         } catch (Exception e) {
             System.err.println("DEU ALGUMA XAROPADA AI, CONSULTE O FORNECEDOR DO CODIGO PARA MAIS DETALHES");
             System.out.println(e);

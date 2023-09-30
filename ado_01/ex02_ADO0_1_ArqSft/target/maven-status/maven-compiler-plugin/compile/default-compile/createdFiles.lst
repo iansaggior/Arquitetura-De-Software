@@ -1,7 +1,11 @@
 modelo\Produto.class
 strategy\IPTO3.class
+strategy\OpcImposto$2.class
+strategy\OpcImposto.class
 modelo\Servico.class
 strategy\CalcOrcam.class
 strategy\IPTO1.class
 cliente\UsaStrategy.class
+strategy\OpcImposto$3.class
 strategy\IPTO2.class
+strategy\OpcImposto$1.class

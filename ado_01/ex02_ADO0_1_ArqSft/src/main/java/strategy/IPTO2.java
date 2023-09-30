@@ -11,6 +11,7 @@ package strategy;
 public class IPTO2 implements CalcOrcam {
     @Override
     public double calcularOrcamento(double orcamento) {
+        System.out.print("Valor do Orçamento com o imposto IPTO02 = ");
         return orcamento * 1.15; // equivalente a valor total do orçamento + (15% * valor total do orçamento)
     }
 }
