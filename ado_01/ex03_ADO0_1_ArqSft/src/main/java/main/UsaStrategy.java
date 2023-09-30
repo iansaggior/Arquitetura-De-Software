@@ -8,6 +8,7 @@ package main;
  * @author iansa
  */
 import java.util.Arrays;
+import java.util.Random;
 import javax.swing.JOptionPane;
 import strategy.*;
 
@@ -18,57 +19,54 @@ public class UsaStrategy {
             int qtdVetor = Integer
                     .parseInt(JOptionPane.showInputDialog("Digite a quantidade de numeros que o seu vetor irá ter:"));
             int[] vetor = new int[qtdVetor];
+            
+            int entreNum = Integer
+                    .parseInt(JOptionPane.showInputDialog(
+                            "Digite qual o limite dos numeros a serem gerados (ex: entre 0-100):"
+                                    + "\n\n****OBS: NÃO PODE SER MENOR QUE O TAMNHO DO VETOR****"));
+            
+            //GERAR NUMEROS ALEATORIOS NAO REPETIDOS
+            Random random = new Random();
 
             for (int i = 0; i < qtdVetor; i++) {
-                vetor[i] = Integer.parseInt(JOptionPane.showInputDialog("Digite o " + (i + 1) + "° valor do vetor: "));
+                int numeroAleatorio;
+                boolean numeroRepetido;
+                do {
+                    numeroAleatorio = random.nextInt(entreNum);
+                    numeroRepetido = false;
+                    for (int j = 0; j < i; j++) {
+                        if (vetor[j] == numeroAleatorio) {
+                            numeroRepetido = true;
+                            break;
+                        }
+                    }
+                } while (numeroRepetido);
+                vetor[i] = numeroAleatorio;
             }
 
-            System.out.println("Vetor antes da ordenação: ");
-            System.out.println(Arrays.toString(vetor));
+            String[] options = {
+                "BUBBLE SORT",
+                "INSERTION SORT",
+                "SELECTION SORT",
+                "SAIR"
+            }; 
+            int option = JOptionPane.showOptionDialog(null, null, "Escolha uma opção",
+                    JOptionPane.INFORMATION_MESSAGE, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
 
-            mtdBubble(vetor);
-            mtdInsertion(vetor);
-            mtdSelection(vetor);
+            if (option > 2) {
+                System.err.println("SAINDO...");
+            } else {
+                System.out.println("Vetor antes da ordenação: ");
+                System.out.println(Arrays.toString(vetor) + "\n");
+
+                MetodoOrdenacao mtdOrd = Ordenacao.values()[option].escolher();
+                mtdOrd.metodoOrdenacao(vetor);
+                System.out.println(Arrays.toString(vetor));
+            }
 
         } catch (Exception e) {
             System.err.println("DEU ALGUMA XAROPADA AI, CONSULTE O FORNECEDOR DO CODIGO PARA MAIS DETALHES");
             System.out.println(e);
         }
-    }
-
-    /**
-     * Metodo estatico que ordena e imprime o vetor atraves do Bubble Sort
-     * 
-     * @param vetor
-     */
-    public static void mtdBubble(int[] vetor) {
-        MetodoOrdenação bubble = new Bubble();
-        System.out.println("\nUsando método de ordenação Bubble Sort: ");
-        bubble.metodoOrdenacao(vetor);
-        System.out.println(Arrays.toString(vetor));
-    }
-
-    /**
-     * Metodo estatico que ordena e imprime o vetor atraves do Insertion Sort
-     * 
-     * @param vetor
-     */
-    public static void mtdInsertion(int[] vetor) {
-        MetodoOrdenação insertion = new Insertion();
-        System.out.println("\nUsando método de ordenação Insertion Sort: ");
-        insertion.metodoOrdenacao(vetor);
-        System.out.println(Arrays.toString(vetor));
-    }
-
-    /**
-     * Metodo estatico que ordena e imprime o vetor atraves do Selection Sort
-     * 
-     * @param vetor
-     */
-    public static void mtdSelection(int[] vetor) {
-        MetodoOrdenação selection = new Selection();
-        System.out.println("\nUsando método de ordenação Selection Sort: ");
-        selection.metodoOrdenacao(vetor);
-        System.out.println(Arrays.toString(vetor));
     }
 }

@@ -8,6 +8,7 @@ package strategy;
  *
  * @author iansa
  */
-public interface MetodoOrdenação {
+public interface MetodoOrdenacao {
+
     public void metodoOrdenacao(int[] v);
 }

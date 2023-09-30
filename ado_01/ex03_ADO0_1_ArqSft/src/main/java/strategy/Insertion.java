@@ -8,7 +8,8 @@ package strategy;
  *
  * @author iansa
  */
-public class Insertion implements MetodoOrdenação {
+public class Insertion implements MetodoOrdenacao {
+
     @Override
     public void metodoOrdenacao(int[] v) {
         int i, j;
@@ -24,6 +25,7 @@ public class Insertion implements MetodoOrdenação {
             cont++;
             v[j] = temp;
         }
-        System.out.println("Quantidade de vezes que ouve uma troca de posição: " + cont);
+        System.out.println("Usanso o método de ordenação Insertion Sort");
+//        System.out.println("Quantidade de vezes que ouve uma troca de posição: " + cont);
     }
 }

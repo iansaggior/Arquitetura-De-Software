@@ -8,7 +8,8 @@ package strategy;
  *
  * @author iansa
  */
-public class Bubble implements MetodoOrdenação {
+public class Bubble implements MetodoOrdenacao {
+
     @Override
     public void metodoOrdenacao(int[] v) {
         int i, j;
@@ -24,7 +25,8 @@ public class Bubble implements MetodoOrdenação {
                 }
             }
         }
-        System.out.println("Quantidade de vezes que ouve uma troca de posição: " + cont);
+        System.out.println("Usanso o método de ordenação Bubble Sort");
+//        System.out.println("Quantidade de vezes que ouve uma troca de posição: " + cont);
     }
 
 }
