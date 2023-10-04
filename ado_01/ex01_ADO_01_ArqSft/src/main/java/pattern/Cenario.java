@@ -4,13 +4,10 @@
  */
 package pattern;
 
-public class Singleton {
-  private static Singleton singleton = new Singleton();
-  
-  private Singleton(){
-  }
-  
-  public static Singleton getInstance(){
-    return singleton;
-  }
+public class Cenario extends Thread{
+  @Override
+    public void run() {
+        Singleton singleton = Singleton.getInstance();
+        System.out.println(singleton);
+    } 
 }
