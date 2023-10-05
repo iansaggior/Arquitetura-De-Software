@@ -4,11 +4,9 @@
  */
 package composite;
 
-/**
- *
- * @author iansa
- */
-public class Promocao implements ProdutoInterface {
+import java.text.DecimalFormat;
+
+public class Promocao implements Composite {
     private String nome;
     private double preco;
     private double desconto;
@@ -20,15 +18,18 @@ public class Promocao implements ProdutoInterface {
     }
 
     @Override
-    public double getPreco() {
+    public double getPrecoTotal() {
         return preco * (1 - desconto);
     }
 
     @Override
     public String toString() {
-        return "Promocao: " +
-                "\nNome='" + nome + '\'' +
-                "\nPreco=" + preco +
-                "\nDesconto=" + desconto;
+        DecimalFormat df = new DecimalFormat("#.##");
+        String precoTotalFormatado = df.format(getPrecoTotal());
+        return "\nProduto em promoção: " +
+                "\n\tNome: '" + nome + "'" +
+                "\n\tPreço: R$" + preco +
+                "\n\tPreço com desconto: R$" + precoTotalFormatado +
+                "\n\tDesconto: " + desconto * 100 + "%";
     }
 }

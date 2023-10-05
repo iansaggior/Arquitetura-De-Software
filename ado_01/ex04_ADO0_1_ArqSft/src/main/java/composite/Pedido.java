@@ -4,37 +4,37 @@
  */
 package composite;
 
-/**
- *
- * @author iansa
- */
+import java.text.DecimalFormat;
 import java.util.*;
 
 public class Pedido {
+    private static int contadorNumeroPedido = 1;
     private String nomeCliente;
-    private List<ProdutoInterface> lista;
+    private List<Composite> lista;
     private int numeroPedido;
+    private double totalCompra;
 
-    public Pedido(String nomeCliente, List<ProdutoInterface> lista, int numeroPedido) {
+    public Pedido(String nomeCliente, List<Composite> lista) {
         this.nomeCliente = nomeCliente;
         this.lista = lista;
-        this.numeroPedido = numeroPedido;
+        this.numeroPedido = contadorNumeroPedido++;
+        getTotalCompra();
     }
 
-    public double getTotalCompra() {
-        double total = 0;
-        for (ProdutoInterface produto : lista) {
-            total += produto.getPreco();
+    private void getTotalCompra() {
+        totalCompra = 0;
+        for (Composite produto : lista) {
+            totalCompra += produto.getPrecoTotal();
         }
-        return total;
     }
 
     @Override
     public String toString() {
-        return "Pedido " +
-                "\nNomeCliente='" + nomeCliente + '\'' +
-                "\nLista=" + lista +
-                "\nNumeroPedido=" + numeroPedido +
-                "\nTotalCompra=" + getTotalCompra();
+        DecimalFormat df = new DecimalFormat("#.##");
+        String totalCompraFormatado = df.format(totalCompra);
+        return "Pedido: " + numeroPedido +
+                "\nCliente= '" + nomeCliente + '\'' +
+                "\nLista= \n\n" + lista +
+                "\n\nTotalCompra: R$" + totalCompraFormatado;
     }
 }

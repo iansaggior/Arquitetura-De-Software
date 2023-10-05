@@ -4,36 +4,30 @@
  */
 package composite;
 
-/**
- *
- * @author iansa
- */
 import java.util.*;
 
-public class CarrinhoDeCompras implements ProdutoInterface {
-    private List<ProdutoInterface> produtos = new ArrayList<>();
+public class CarrinhoDeCompras implements Composite {
+    private List<Composite> produtos = new ArrayList<>();
 
-    public void adicionarProduto(ProdutoInterface produto) {
+    public void adicionarProduto(Composite produto) {
         produtos.add(produto);
     }
 
-    public void removerProduto(ProdutoInterface produto) {
+    public void removerProduto(Composite produto) {
         produtos.remove(produto);
     }
 
     @Override
-    public double getPreco() {
+    public double getPrecoTotal() {
         double total = 0;
-        for (ProdutoInterface produto : produtos) {
-            total += produto.getPreco();
+        for (Composite produto : produtos) {
+            total += produto.getPrecoTotal();
         }
         return total;
     }
 
     @Override
     public String toString() {
-        return "CarrinhoDeCompras{" +
-                "produtos=" + produtos +
-                '}';
+        return "CarrinhoDeCompras: " + produtos;
     }
 }
