@@ -1,0 +1,6 @@
+state\Atrasada.class
+cliente\GerenciadorTarefas.class
+state\Concluida.class
+state\Estados.class
+state\Pendente.class
+cliente\Tarefa.class
