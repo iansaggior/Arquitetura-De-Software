@@ -1,0 +1,6 @@
+subsistema\Projeto.class
+subsistema\Cliente.class
+subsistema\Banco.class
+facade\Facade.class
+subsistema\Gerente.class
+principal\Gerenciamento.class
