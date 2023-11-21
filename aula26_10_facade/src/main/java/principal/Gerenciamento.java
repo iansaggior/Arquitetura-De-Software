@@ -3,7 +3,6 @@
  */
 
 package principal;
-import subsistema.*;
 import facade.*;
 
 /**
