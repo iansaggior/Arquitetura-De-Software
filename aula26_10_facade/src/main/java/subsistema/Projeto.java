@@ -21,6 +21,7 @@ public class Projeto {
         this.dataFim = dataFim;
     }
 
+    // função que pesquisa o projeto pelo ID atraves da lista gerada no banco
     public Projeto pesquisarProjetoId(int id) {
         Banco banco = new Banco();
         banco.carregarDados();

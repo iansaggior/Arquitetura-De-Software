@@ -17,6 +17,7 @@ public class Cliente {
         this.id = id;
     }
 
+    // função que pesquisa o cliente pelo ID atraves da lista gerada no banco
     public Cliente pesquisarClienteId(long id) {
         Banco banco = new Banco();
         banco.carregarDados();

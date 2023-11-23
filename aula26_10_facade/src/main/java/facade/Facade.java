@@ -8,8 +8,10 @@ package facade;
  *
  * @author ian.spereira
  */
+
 import subsistema.*;
 public class Facade {
+    // trecho responsavel por interligar as tres listas e imprimir um relatorio final
     public void gerarRelatorio() {
         Cliente cliente = new Cliente();
         Gerente gerente = new Gerente();

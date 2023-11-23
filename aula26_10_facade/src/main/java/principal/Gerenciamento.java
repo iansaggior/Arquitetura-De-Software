@@ -12,7 +12,7 @@ import facade.*;
 public class Gerenciamento {
 
     public static void main(String[] args) {
-        // Gerar Relatorio
+        // Gerar relatorio atraves da classe facade que conecta as demais classes
         Facade facade = new Facade();
         facade.gerarRelatorio();
     }

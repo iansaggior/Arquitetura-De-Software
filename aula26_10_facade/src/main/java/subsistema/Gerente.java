@@ -17,6 +17,7 @@ public class Gerente {
         this.id = id;
     }
 
+    // função que pesquisa o gerente pelo ID atraves da lista gerada no banco
     public Gerente pesquisarGerenteId(int id) {
         Banco banco = new Banco();
         banco.carregarDados();
