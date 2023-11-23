@@ -8,13 +8,14 @@ package exemplo4;
  *
  * @author ian.spereira
  */
-//usabdo lambda
+//usando lambda
 public class Main {
     public static void main(String[] args) {
         
-        NomeCompleto nome = () -> {return "Ian Saggioratto Pereira";};
+        NomeCompleto nome = () -> {
+            return "Ian Saggioratto Pereira";
+        };
         
         nome.exibir(nome.getNome());
     }
-    
 }

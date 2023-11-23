@@ -21,5 +21,4 @@ public interface NomeCompleto {
     default void exibir_02(String nome) {
         System.out.println(nome.replace(" ", "\n"));
     }
-    
 }
