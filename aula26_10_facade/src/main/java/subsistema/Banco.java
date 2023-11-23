@@ -3,8 +3,9 @@ package subsistema;
 import java.util.ArrayList;
 import java.util.List;
 
-/*
- *  Professor Gerson Risso
+/**
+ *
+ * @author ian.spereira
  */
 public class Banco {
     private List<Cliente> listaClientes = new ArrayList<>();

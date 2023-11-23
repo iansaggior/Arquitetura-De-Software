@@ -1,7 +1,8 @@
 package subsistema;
 
-/*
- *  Professor Gerson Risso
+/**
+ *
+ * @author ian.spereira
  */
 public class Gerente {
 
