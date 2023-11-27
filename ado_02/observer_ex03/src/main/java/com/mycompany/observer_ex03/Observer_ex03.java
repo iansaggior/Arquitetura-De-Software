@@ -14,6 +14,7 @@ public class Observer_ex03 {
 
     public static void main(String[] args) {
         Subject agencia01 = new Agencia("Agencia mil bala");
+        
         Observer assinante01 = new Assinante("Xaropada", agencia01);        
         Observer assinante02 = new Assinante("Rubinho", agencia01);
         Observer assinante03 = new Assinante("Cleitinho", agencia01);

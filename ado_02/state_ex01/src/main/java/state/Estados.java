@@ -10,5 +10,4 @@ public interface Estados {
     public void correr();
     public void pular();
     public void abaixar();
-
 }

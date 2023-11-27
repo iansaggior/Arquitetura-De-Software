@@ -46,10 +46,9 @@ public class Correndo implements Estados {
         acao.setEstado(new Pulando(acao));
     }
     
-    
     @Override
     public void abaixar() {
-        System.out.println("Voce esta correndo. Só é possivel abaixar quando estiver esperando ou pulando!!");
+        acao.setEstado(new Abaixando(acao));        
     }
 
     @Override

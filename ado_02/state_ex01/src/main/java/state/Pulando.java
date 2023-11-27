@@ -10,7 +10,6 @@ public class Pulando implements Estados {
     private String mensagem = "Pulando";
     private Acoes acao;
     
-    
     public String getMensagem() {
         return mensagem;
     }

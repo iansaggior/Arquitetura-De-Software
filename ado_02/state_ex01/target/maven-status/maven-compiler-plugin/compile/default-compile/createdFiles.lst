@@ -3,6 +3,5 @@ state\Esperando.class
 cliente\GerenciadorEstados.class
 state\Abaixando.class
 state\Pulando.class
-com\mycompany\state_ex01\State_ex01.class
 state\Estados.class
 state\Correndo.class

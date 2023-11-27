@@ -33,7 +33,7 @@ public class Abaixando implements Estados {
     }
     @Override
     public void correr() {
-        System.out.println("Só é possivel correr quando estiver esperando ou pulando");        
+        acao.setEstado(new Correndo(acao));        
     }
     @Override
     public void esperar() {

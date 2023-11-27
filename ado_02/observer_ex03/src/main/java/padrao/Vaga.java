@@ -10,5 +10,4 @@ package padrao;
  */
 public enum Vaga {
     VAGA_01,VAGA_02, VAGA_03, VAGA_04;
-    
 }

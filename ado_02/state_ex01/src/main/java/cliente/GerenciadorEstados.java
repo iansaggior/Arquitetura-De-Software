@@ -8,6 +8,7 @@ package cliente;
 public class GerenciadorEstados {
     public static void main(String[] args) {
         Acoes acao = new Acoes("Requisitar ação");
+        acao.chamarEsperar();        
         acao.chamarCorrer();
         acao.chamarCorrer();
         acao.chamarAbaixar();
